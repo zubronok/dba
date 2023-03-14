@@ -1,7 +1,7 @@
 #pragma once
 #include <msclr\marshal_cppstd.h>
 #include "uo_class.h"
-#include "login_err.h"
+#include "Login_err.h"
 
 namespace DBa {
 

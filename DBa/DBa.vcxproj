@@ -128,11 +128,13 @@
     <ClCompile Include="db_error.cpp" />
     <ClCompile Include="groups.cpp" />
     <ClCompile Include="Login.cpp" />
-    <ClCompile Include="login_err.cpp" />
+    <ClCompile Include="Login_err.cpp" />
     <ClCompile Include="Main_form.cpp" />
+    <ClCompile Include="split.cpp" />
     <ClCompile Include="trans.cpp" />
     <ClCompile Include="uo.cpp" />
     <ClCompile Include="uo_class.cpp" />
+    <ClCompile Include="usr_not_found.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add_uo.h">
@@ -158,17 +160,21 @@
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="login_err.h">
+    <ClInclude Include="Login_err.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Main_form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="split.h" />
     <ClInclude Include="trans.h" />
     <ClInclude Include="uo.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="uo_class.h" />
+    <ClInclude Include="usr_not_found.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="add_uo.resx">
@@ -192,14 +198,17 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login_err.resx">
-      <DependentUpon>login_err.h</DependentUpon>
+    <EmbeddedResource Include="Login_err.resx">
+      <DependentUpon>Login_err.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_form.resx">
       <DependentUpon>Main_form.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uo.resx">
       <DependentUpon>uo.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usr_not_found.resx">
+      <DependentUpon>usr_not_found.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

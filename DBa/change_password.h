@@ -1,7 +1,17 @@
 #pragma once
-#include "trans.h"
+#include <vector>
+#include <fstream>
 #include <msclr/marshal_cppstd.h>
+#include "trans.h"
+#include "Login_err.h"
+#include "split.h"
+#include "usr_not_found.h"
 #define sst System::String^
+
+using std::ifstream;
+using std::ofstream;
+using std::vector;
+
 namespace DBa {
 
 	using namespace System;
@@ -155,7 +165,44 @@ namespace DBa {
 		std::string pwd = msclr::interop::marshal_as<std::string>(pass);
 		std::string pwd2 = msclr::interop::marshal_as<std::string>(pass2);
 		if (pwd != pwd2) {
-
+			login_err^ form = gcnew login_err;
+			form->ShowDialog();
+		}
+		else {
+			delete pass2;
+			delete pass;
+			ifstream inp("Z:\\zubr_db\\usr.zb");
+			vector<std::string> *__datas = new vector<std::string>;
+			std::string* temp = new std::string;
+			while (!inp.eof()) {
+				getline(inp, *temp);
+				__datas->push_back(*temp);
+			}
+			delete temp;
+			vector<vector<std::string>> data;
+			for (int i = 0; i < __datas->size(); i++) {
+				data.push_back(split(__datas->at(i), '-'));
+			}
+			delete __datas;
+			bool changed = false;
+			for (int i = 0; i < data.size(); i++) {
+				if (data[i][0] == transf::getName()) {
+					data[i][1] = pwd;
+					changed = true;
+				}
+			}
+			if (changed) {
+				ofstream out("Z:\\zubr_db\\usr.zb");
+				for (int i = 0; i < data.size()-1; i++) {
+					out << data[i][0] << '-' << data[i][1] << '\n';
+				}
+				out << data[data.size() - 1][0] << '-' << data[data.size() - 1][1];
+				this->Close();
+			}
+			else {
+				usr_not_found^ form = gcnew usr_not_found;
+				form->ShowDialog();
+			}
 		}
 	}
 };

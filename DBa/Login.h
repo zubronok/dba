@@ -4,12 +4,13 @@
 #include "db_error.h"
 #include <vector>
 #include <msclr\marshal_cppstd.h>
-#include "login_err.h"
+#include "Login_err.h"
 #include <stdlib.h>
 #include "Main_form.h"
 #include <string>
 #include "exts.h"
 #include "trans.h"
+#include "split.h"
 
 extern std::string username;
 
@@ -139,12 +140,21 @@ namespace DBa {
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"¬ход в систему";
+			this->Load += gcnew System::EventHandler(this, &Login::Login_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void auth_butt_Click(System::Object^ sender, System::EventArgs^ e) {
+		bool is_skipping_auth = false;
+		if (pass_tb->Text == "" && login_tb->Text == "") {
+			transf::setName("$UNSET");
+			Main_form^ mf = gcnew Main_form;
+			mf->Show();
+			this->Hide();
+			is_skipping_auth = true;
+		}
 		ifstream db("Z:\\zubr_db\\usr.zb");
 		if (!db.is_open())
 		{
@@ -169,7 +179,7 @@ namespace DBa {
 				auth = true;
 			}
 		}
-		if (!auth) {
+		if (!auth && !is_skipping_auth) {
 			
 			login_err^ lef = gcnew login_err;
 			lef->ShowDialog();
@@ -184,6 +194,8 @@ namespace DBa {
 		}
 	}
 
+private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
 

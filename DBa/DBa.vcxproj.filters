@@ -21,7 +21,7 @@
     <ClCompile Include="db_error.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="login_err.cpp">
+    <ClCompile Include="Login_err.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Main_form.cpp">
@@ -51,6 +51,12 @@
     <ClCompile Include="trans.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="split.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="usr_not_found.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Login.h">
@@ -59,7 +65,7 @@
     <ClInclude Include="db_error.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="login_err.h">
+    <ClInclude Include="Login_err.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Main_form.h">
@@ -93,6 +99,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="trans.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="split.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="usr_not_found.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
