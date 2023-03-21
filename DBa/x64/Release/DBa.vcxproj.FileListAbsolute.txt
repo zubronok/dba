@@ -1,0 +1,15 @@
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.vcxproj.AssemblyReference.cache
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.add_uo.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.add_user.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.admins_list.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.change_password.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.db_error.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.groups.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.Login.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.Login_err.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.Main_form.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.remove_user.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.uo.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.usr_not_found.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.vcxproj.GenerateResource.cache

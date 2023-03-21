@@ -1,0 +1,21 @@
+﻿  add_uo.cpp
+  add_user.cpp
+  admins_list.cpp
+  change_password.cpp
+  db_error.cpp
+  groups.cpp
+  Login.cpp
+C:\Users\8\source\repos\DBa\DBa\Login.cpp(9,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  Login_err.cpp
+  Main_form.cpp
+  mcsv.cpp
+  remove_user.cpp
+  split.cpp
+  trans.cpp
+  uo.cpp
+  uo_class.cpp
+  usr_not_found.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Создание кода...
+  add_uo.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  DBa.vcxproj -> C:\Users\8\source\repos\DBa\x64\Release\DBa.exe

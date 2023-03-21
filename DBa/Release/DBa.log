@@ -1,0 +1,57 @@
+﻿  add_uo.cpp
+  add_user.cpp
+  admins_list.cpp
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(123,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(128,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(135,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(183,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(188,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(196,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(204,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(208,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(244,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(248,20): warning C4018: <: несоответствие типов со знаком и без знака
+  change_password.cpp
+C:\Users\8\source\repos\DBa\DBa\change_password.h(183,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(188,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(196,23): warning C4018: <: несоответствие типов со знаком и без знака
+  db_error.cpp
+  groups.cpp
+  Login.cpp
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(123,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(128,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(135,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(183,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(188,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(196,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(204,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(208,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(244,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(248,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\Login.h(174,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\Login.cpp(9,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
+  Login_err.cpp
+  Main_form.cpp
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(123,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(128,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(135,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(183,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(188,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\change_password.h(196,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(204,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(208,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(244,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\admins_list.h(248,20): warning C4018: <: несоответствие типов со знаком и без знака
+  remove_user.cpp
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(123,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(128,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\8\source\repos\DBa\DBa\remove_user.h(135,21): warning C4018: <: несоответствие типов со знаком и без знака
+  split.cpp
+  trans.cpp
+  uo.cpp
+  uo_class.cpp
+  usr_not_found.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Создание кода...
+  add_uo.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+LINK : fatal error LNK1561: точка входа должна быть определена
