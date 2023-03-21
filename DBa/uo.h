@@ -1,5 +1,11 @@
 #pragma once
 #include "add_uo.h"
+#include <iostream>
+#include <windows.h>
+#include <sqlext.h>
+#include <sqltypes.h>
+#include "mcsv.h"
+#include "trans.h"
 
 namespace DBa {
 
@@ -73,7 +79,7 @@ namespace DBa {
 	private: System::Windows::Forms::ToolStripMenuItem^ ýêñïîðòÂÔàéëToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ excelToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ wordToolStripMenuItem;
-	private: System::Drawing::Printing::PrintDocument^ printDocument1;
+
 
 
 
@@ -144,13 +150,13 @@ namespace DBa {
 			this->ýêñïîðòÂÔàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->excelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->wordToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->printDocument1 = (gcnew System::Drawing::Printing::PrintDocument());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->main_dg))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// main_dg
 			// 
+			this->main_dg->AllowUserToAddRows = false;
 			this->main_dg->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->main_dg->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(11) {
 				this->num, this->name,
@@ -158,7 +164,7 @@ namespace DBa {
 			});
 			this->main_dg->Location = System::Drawing::Point(8, 30);
 			this->main_dg->Name = L"main_dg";
-			this->main_dg->Size = System::Drawing::Size(1304, 601);
+			this->main_dg->Size = System::Drawing::Size(1293, 601);
 			this->main_dg->TabIndex = 0;
 			this->main_dg->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &uo::dataGridView1_CellContentClick);
 			// 
@@ -229,7 +235,7 @@ namespace DBa {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(1153, 9);
+			this->label1->Location = System::Drawing::Point(1142, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(89, 13);
 			this->label1->TabIndex = 1;
@@ -238,7 +244,7 @@ namespace DBa {
 			// 
 			// rows_num_tb
 			// 
-			this->rows_num_tb->Location = System::Drawing::Point(1248, 4);
+			this->rows_num_tb->Location = System::Drawing::Point(1237, 4);
 			this->rows_num_tb->Name = L"rows_num_tb";
 			this->rows_num_tb->ReadOnly = true;
 			this->rows_num_tb->Size = System::Drawing::Size(64, 20);
@@ -253,7 +259,7 @@ namespace DBa {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1324, 24);
+			this->menuStrip1->Size = System::Drawing::Size(1313, 24);
 			this->menuStrip1->TabIndex = 4;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -329,8 +335,9 @@ namespace DBa {
 			// ïå÷àòüToolStripMenuItem
 			// 
 			this->ïå÷àòüToolStripMenuItem->Name = L"ïå÷àòüToolStripMenuItem";
-			this->ïå÷àòüToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->ïå÷àòüToolStripMenuItem->Size = System::Drawing::Size(160, 22);
 			this->ïå÷àòüToolStripMenuItem->Text = L"Ïå÷àòü";
+			this->ïå÷àòüToolStripMenuItem->Click += gcnew System::EventHandler(this, &uo::ïå÷àòüToolStripMenuItem_Click);
 			// 
 			// ýêñïîðòÂÔàéëToolStripMenuItem
 			// 
@@ -339,7 +346,7 @@ namespace DBa {
 					this->wordToolStripMenuItem
 			});
 			this->ýêñïîðòÂÔàéëToolStripMenuItem->Name = L"ýêñïîðòÂÔàéëToolStripMenuItem";
-			this->ýêñïîðòÂÔàéëToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->ýêñïîðòÂÔàéëToolStripMenuItem->Size = System::Drawing::Size(160, 22);
 			this->ýêñïîðòÂÔàéëToolStripMenuItem->Text = L"Ýêñïîðò â ôàéë";
 			// 
 			// excelToolStripMenuItem
@@ -354,19 +361,16 @@ namespace DBa {
 			this->wordToolStripMenuItem->Size = System::Drawing::Size(123, 22);
 			this->wordToolStripMenuItem->Text = L"MS Word";
 			// 
-			// printDocument1
-			// 
-			this->printDocument1->PrintPage += gcnew System::Drawing::Printing::PrintPageEventHandler(this, &uo::printDocument1_PrintPage);
-			// 
 			// uo
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1324, 637);
+			this->ClientSize = System::Drawing::Size(1313, 637);
 			this->Controls->Add(this->rows_num_tb);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->main_dg);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"uo";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -381,6 +385,24 @@ namespace DBa {
 		}
 #pragma endregion
 	private: System::Void uo_Load(System::Object^ sender, System::EventArgs^ e) {
+		vector<vector<string>> data = mcsv::read_csv("Z:\\zubr_db\\schools.zb");
+		for (int i = 0; i < data.size(); i++)
+		{
+			main_dg->Rows->Add(transf::getLastAddedSchoolNumber()+1,
+				msclr::interop::marshal_as<System::String^>(data[i][0]), 
+				msclr::interop::marshal_as<System::String^>(data[i][1]),
+				msclr::interop::marshal_as<System::String^>(data[i][2]),
+				msclr::interop::marshal_as<System::String^>(data[i][3]),
+				msclr::interop::marshal_as<System::String^>(data[i][4]),
+				msclr::interop::marshal_as<System::String^>(data[i][5]),
+				msclr::interop::marshal_as<System::String^>(data[i][6]),
+				msclr::interop::marshal_as<System::String^>(data[i][7]),
+				msclr::interop::marshal_as<System::String^>(data[i][8]),
+				msclr::interop::marshal_as<System::String^>(data[i][9]),
+				msclr::interop::marshal_as<System::String^>(data[i][10])
+				);
+			transf::setLastAddedSchoolNumber(transf::getLastAddedSchoolNumber() + 1);
+		}
 		int rows_num = this->main_dg->Rows->Count;
 		this->rows_num_tb->Text = rows_num.ToString();
 	}
@@ -397,8 +419,29 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void äîáàâèòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	add_uo^ form = gcnew add_uo;
 	form->ShowDialog();
+	vector<vector<string>> data = mcsv::read_csv("Z:\\zubr_db\\schools.zb");
+	main_dg->Rows->Add(transf::getLastAddedSchoolNumber() + 1,
+		msclr::interop::marshal_as<System::String^>(data[data.size()-1][0]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][1]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][2]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][3]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][4]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][5]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][6]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][7]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][8]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][9]),
+		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][10])
+	);
+	transf::setLastAddedSchoolNumber(transf::getLastAddedSchoolNumber()+1);
+	rows_num_tb->Text = (Int32::Parse(rows_num_tb->Text)+1).ToString();
 }
 private: System::Void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
+}
+private: System::Void ïå÷àòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	Bitmap^ bmp = gcnew Bitmap(main_dg->Size.Width + 10, main_dg->Size.Height + 10);
+	main_dg->DrawToBitmap(bmp, main_dg->Bounds);
+	bmp->Save("Z:\\zubr_db\\test.bmp");
 }
 };
 }

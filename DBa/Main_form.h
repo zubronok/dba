@@ -127,7 +127,7 @@ namespace DBa {
 			});
 			this->main_strip->Location = System::Drawing::Point(0, 0);
 			this->main_strip->Name = L"main_strip";
-			this->main_strip->Size = System::Drawing::Size(876, 24);
+			this->main_strip->Size = System::Drawing::Size(1170, 24);
 			this->main_strip->TabIndex = 1;
 			this->main_strip->Text = L"menuStrip2";
 			// 
@@ -262,8 +262,9 @@ namespace DBa {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(876, 648);
+			this->ClientSize = System::Drawing::Size(1170, 666);
 			this->Controls->Add(this->main_strip);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"Main_form";
 			this->Text = L"Главная";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;

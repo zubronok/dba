@@ -1,8 +1,12 @@
 #pragma once
 #include <string>
 #include <fstream>
+#include <vector>
 #include "db_error.h"
+
 using std::ofstream;
+using std::vector;
+using std::string;
 
 class uo_class
 {
@@ -23,8 +27,11 @@ public:
 		phone_ = phone;
 	}
 
-	void append_to_file() {
-		
+	vector<string> get_vdata() 
+	{
+		vector<string> tempdata;
+		tempdata.push_back(name_ + ',' + shortname_ + ',' + x_ + ',' + form_ + ',' + org_ + ',' + leader_ + ',' + email_ + ',' + site_ + ',' + adress_ + ',' + unp_ + ',' + phone_);
+		return tempdata;
 	}
 };
 

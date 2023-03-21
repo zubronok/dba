@@ -85,11 +85,6 @@ namespace DBa {
 			this->rows_num_tb = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->ïå÷àòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ýêñïîðòÂÔàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->excelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->wordToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ýêñïîðòToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->äîáàâèòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ïðàâêàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->âûðåçàòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -97,6 +92,11 @@ namespace DBa {
 			this->âñòàâèòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->íàéòèToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->çàìåíèòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ýêñïîðòToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ïå÷àòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ýêñïîðòÂÔàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->excelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->wordToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->main_dg))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -152,44 +152,6 @@ namespace DBa {
 			this->menuStrip1->Size = System::Drawing::Size(357, 24);
 			this->menuStrip1->TabIndex = 7;
 			this->menuStrip1->Text = L"menuStrip1";
-			// 
-			// ïå÷àòüToolStripMenuItem
-			// 
-			this->ïå÷àòüToolStripMenuItem->Name = L"ïå÷àòüToolStripMenuItem";
-			this->ïå÷àòüToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->ïå÷àòüToolStripMenuItem->Text = L"Ïå÷àòü";
-			// 
-			// ýêñïîðòÂÔàéëToolStripMenuItem
-			// 
-			this->ýêñïîðòÂÔàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->excelToolStripMenuItem,
-					this->wordToolStripMenuItem
-			});
-			this->ýêñïîðòÂÔàéëToolStripMenuItem->Name = L"ýêñïîðòÂÔàéëToolStripMenuItem";
-			this->ýêñïîðòÂÔàéëToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->ýêñïîðòÂÔàéëToolStripMenuItem->Text = L"Ýêñïîðò â ôàéë";
-			// 
-			// excelToolStripMenuItem
-			// 
-			this->excelToolStripMenuItem->Name = L"excelToolStripMenuItem";
-			this->excelToolStripMenuItem->Size = System::Drawing::Size(123, 22);
-			this->excelToolStripMenuItem->Text = L"MS Excel";
-			// 
-			// wordToolStripMenuItem
-			// 
-			this->wordToolStripMenuItem->Name = L"wordToolStripMenuItem";
-			this->wordToolStripMenuItem->Size = System::Drawing::Size(123, 22);
-			this->wordToolStripMenuItem->Text = L"MS Word";
-			// 
-			// ýêñïîðòToolStripMenuItem
-			// 
-			this->ýêñïîðòToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->ïå÷àòüToolStripMenuItem,
-					this->ýêñïîðòÂÔàéëToolStripMenuItem
-			});
-			this->ýêñïîðòToolStripMenuItem->Name = L"ýêñïîðòToolStripMenuItem";
-			this->ýêñïîðòToolStripMenuItem->Size = System::Drawing::Size(64, 20);
-			this->ýêñïîðòToolStripMenuItem->Text = L"Ýêñïîðò";
 			// 
 			// äîáàâèòüToolStripMenuItem
 			// 
@@ -249,6 +211,44 @@ namespace DBa {
 			this->çàìåíèòüToolStripMenuItem->Size = System::Drawing::Size(181, 22);
 			this->çàìåíèòüToolStripMenuItem->Text = L"Çàìåíèòü...";
 			// 
+			// ýêñïîðòToolStripMenuItem
+			// 
+			this->ýêñïîðòToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->ïå÷àòüToolStripMenuItem,
+					this->ýêñïîðòÂÔàéëToolStripMenuItem
+			});
+			this->ýêñïîðòToolStripMenuItem->Name = L"ýêñïîðòToolStripMenuItem";
+			this->ýêñïîðòToolStripMenuItem->Size = System::Drawing::Size(64, 20);
+			this->ýêñïîðòToolStripMenuItem->Text = L"Ýêñïîðò";
+			// 
+			// ïå÷àòüToolStripMenuItem
+			// 
+			this->ïå÷àòüToolStripMenuItem->Name = L"ïå÷àòüToolStripMenuItem";
+			this->ïå÷àòüToolStripMenuItem->Size = System::Drawing::Size(160, 22);
+			this->ïå÷àòüToolStripMenuItem->Text = L"Ïå÷àòü";
+			// 
+			// ýêñïîðòÂÔàéëToolStripMenuItem
+			// 
+			this->ýêñïîðòÂÔàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->excelToolStripMenuItem,
+					this->wordToolStripMenuItem
+			});
+			this->ýêñïîðòÂÔàéëToolStripMenuItem->Name = L"ýêñïîðòÂÔàéëToolStripMenuItem";
+			this->ýêñïîðòÂÔàéëToolStripMenuItem->Size = System::Drawing::Size(160, 22);
+			this->ýêñïîðòÂÔàéëToolStripMenuItem->Text = L"Ýêñïîðò â ôàéë";
+			// 
+			// excelToolStripMenuItem
+			// 
+			this->excelToolStripMenuItem->Name = L"excelToolStripMenuItem";
+			this->excelToolStripMenuItem->Size = System::Drawing::Size(123, 22);
+			this->excelToolStripMenuItem->Text = L"MS Excel";
+			// 
+			// wordToolStripMenuItem
+			// 
+			this->wordToolStripMenuItem->Name = L"wordToolStripMenuItem";
+			this->wordToolStripMenuItem->Size = System::Drawing::Size(123, 22);
+			this->wordToolStripMenuItem->Text = L"MS Word";
+			// 
 			// groups
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -258,6 +258,7 @@ namespace DBa {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->main_dg);
 			this->Controls->Add(this->menuStrip1);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"groups";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;

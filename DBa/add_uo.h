@@ -1,5 +1,6 @@
 #pragma once
 #include <msclr\marshal_cppstd.h>
+#include "mcsv.h"
 #include "uo_class.h"
 #include "Login_err.h"
 
@@ -112,6 +113,7 @@ namespace DBa {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(add_uo::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->name_tb = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -386,6 +388,7 @@ namespace DBa {
 			this->Controls->Add(this->label1);
 			this->Cursor = System::Windows::Forms::Cursors::SizeAll;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"add_uo";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Добавление информации об УО";
@@ -426,7 +429,7 @@ namespace DBa {
 			unp = msclr::interop::marshal_as<std::string>(unp_tb->Text);
 
 			uo_class new_class(name, shortname, x, form, org, leader, email, site, adress, unp, phone);
-			new_class.append_to_file();
+			mcsv::append_csv("Z:\\zubr_db\\schools.zb", new_class.get_vdata());
 			this->Close();
 		}
 		else
@@ -434,6 +437,7 @@ namespace DBa {
 			login_err^ form = gcnew login_err;
 			form->ShowDialog();
 		}
+		
 	}
 private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
 }

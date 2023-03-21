@@ -12,3 +12,4 @@ C:\Users\8\source\repos\DBa\DBa\x64\Debug\DBa.admins_list.resources
 C:\Users\8\source\repos\DBa\DBa\x64\Debug\DBa.change_password.resources
 C:\Users\8\source\repos\DBa\DBa\x64\Debug\DBa.Login_err.resources
 C:\Users\8\source\repos\DBa\DBa\x64\Debug\DBa.usr_not_found.resources
+C:\Users\8\source\repos\DBa\DBa\x64\Debug\DBa.remove_user.resources

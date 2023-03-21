@@ -2,6 +2,8 @@
 
 namespace transf {
 	std::string __name;
+	int lastAddedUserNumber = 0;
+	int lastAddedSchoolNumber = 0;
 
 	std::string getName()
 	{
@@ -11,4 +13,25 @@ namespace transf {
 	void setName(std::string name_) {
 		__name = name_;
 	}
+
+	int getLastAddedUserNumber()
+	{
+		return lastAddedUserNumber;
+	}
+
+	void setLastAddedUserNumber(int addedNumber)
+	{
+		lastAddedUserNumber = addedNumber;
+	}
+
+	int getLastAddedSchoolNumber()
+	{
+		return lastAddedSchoolNumber;
+	}
+
+	void setLastAddedSchoolNumber(int addedSchool)
+	{
+		lastAddedSchoolNumber = addedSchool;
+	}
+
 }

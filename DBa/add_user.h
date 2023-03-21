@@ -75,9 +75,9 @@ namespace DBa {
 			// 
 			this->pass_tb->Location = System::Drawing::Point(12, 64);
 			this->pass_tb->Name = L"pass_tb";
-			this->pass_tb->PasswordChar = '*';
 			this->pass_tb->Size = System::Drawing::Size(295, 20);
 			this->pass_tb->TabIndex = 1;
+			this->pass_tb->UseSystemPasswordChar = true;
 			// 
 			// label1
 			// 

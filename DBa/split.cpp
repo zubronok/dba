@@ -7,7 +7,7 @@ using std::vector;
 
 vector<string> split(string text, char delimeter)
 {
-	int pointer = 0;
+	size_t pointer = 0;
 	vector<string> vct;
 	const size_t size = text.size();
 	for (size_t i = 0; i < size - 1; i++)
