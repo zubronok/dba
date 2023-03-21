@@ -218,6 +218,9 @@
     <EmbeddedResource Include="groups.resx">
       <DependentUpon>groups.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="help.resx">
+      <DependentUpon>help.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>

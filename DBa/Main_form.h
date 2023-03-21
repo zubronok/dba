@@ -6,7 +6,7 @@
 #include "change_password.h"
 #include <Windows.h>
 #include <shellapi.h>
-
+#include "help.h"
 
 namespace DBa {
 
@@ -298,7 +298,8 @@ private: System::Void ó÷ğåæäåíèåÎáğàçîâàíèÿToolStripMenuItem_Click(System::Objec
 	form->ShowDialog();
 }
 private: System::Void ñïğàâêàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	help^ form = gcnew help;
+	form->ShowDialog();
 }
 private: System::Void äîáàâèòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	add_user^ form = gcnew add_user;

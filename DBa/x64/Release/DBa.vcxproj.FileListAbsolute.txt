@@ -13,3 +13,4 @@ C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.remove_user.resources
 C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.uo.resources
 C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.usr_not_found.resources
 C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.vcxproj.GenerateResource.cache
+C:\Users\8\source\repos\DBa\DBa\x64\Release\DBa.help.resources

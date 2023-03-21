@@ -4,6 +4,7 @@
   DBa.change_password.resources - Embedded, ContainedInManifestFile, 
   DBa.db_error.resources - Embedded, ContainedInManifestFile, 
   DBa.groups.resources - Embedded, ContainedInManifestFile, 
+  DBa.help.resources - Embedded, ContainedInManifestFile, 
   DBa.Login.resources - Embedded, ContainedInManifestFile, 
   DBa.Login_err.resources - Embedded, ContainedInManifestFile, 
   DBa.Main_form.resources - Embedded, ContainedInManifestFile, 
@@ -50,6 +51,9 @@ Class DBa.admins_list: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class DBa.groups: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class DBa.help: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class DBa.uo: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

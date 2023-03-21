@@ -79,10 +79,11 @@ namespace DBa {
 	private: System::Windows::Forms::ToolStripMenuItem^ ˝ÍÒÔÓÚToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ ÔÂ˜‡Ú¸ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ ˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ excelToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ wordToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ bmpToolStripMenuItem;
+
+
+
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+	private: System::Windows::Forms::ToolStripMenuItem^ Ó·ÌÓ‚ËÚ¸ToolStripMenuItem;
 
 
 
@@ -155,10 +156,8 @@ namespace DBa {
 			this->˝ÍÒÔÓÚToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ÔÂ˜‡Ú¸ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->excelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->wordToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->bmpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->Ó·ÌÓ‚ËÚ¸ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->main_dg))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -262,9 +261,9 @@ namespace DBa {
 			// 
 			// menuStrip1
 			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
 				this->Ô‡‚Í‡ToolStripMenuItem,
-					this->‰Ó·‡‚ËÚ¸ToolStripMenuItem, this->˝ÍÒÔÓÚToolStripMenuItem
+					this->‰Ó·‡‚ËÚ¸ToolStripMenuItem, this->˝ÍÒÔÓÚToolStripMenuItem, this->Ó·ÌÓ‚ËÚ¸ToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -350,32 +349,17 @@ namespace DBa {
 			// 
 			// ˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem
 			// 
-			this->˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->excelToolStripMenuItem,
-					this->wordToolStripMenuItem, this->bmpToolStripMenuItem
-			});
 			this->˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem->Name = L"˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem";
 			this->˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem->Text = L"›ÍÒÔÓÚ ‚ Ù‡ÈÎ";
+			this->˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem->Text = L"›ÍÒÔÓÚ ‚ .bmp";
+			this->˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem->Click += gcnew System::EventHandler(this, &uo::˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem_Click);
 			// 
-			// excelToolStripMenuItem
+			// Ó·ÌÓ‚ËÚ¸ToolStripMenuItem
 			// 
-			this->excelToolStripMenuItem->Name = L"excelToolStripMenuItem";
-			this->excelToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->excelToolStripMenuItem->Text = L"MS Excel";
-			// 
-			// wordToolStripMenuItem
-			// 
-			this->wordToolStripMenuItem->Name = L"wordToolStripMenuItem";
-			this->wordToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->wordToolStripMenuItem->Text = L"MS Word";
-			// 
-			// bmpToolStripMenuItem
-			// 
-			this->bmpToolStripMenuItem->Name = L"bmpToolStripMenuItem";
-			this->bmpToolStripMenuItem->Size = System::Drawing::Size(180, 22);
-			this->bmpToolStripMenuItem->Text = L".bmp";
-			this->bmpToolStripMenuItem->Click += gcnew System::EventHandler(this, &uo::bmpToolStripMenuItem_Click);
+			this->Ó·ÌÓ‚ËÚ¸ToolStripMenuItem->Name = L"Ó·ÌÓ‚ËÚ¸ToolStripMenuItem";
+			this->Ó·ÌÓ‚ËÚ¸ToolStripMenuItem->Size = System::Drawing::Size(73, 20);
+			this->Ó·ÌÓ‚ËÚ¸ToolStripMenuItem->Text = L"Œ·ÌÓ‚ËÚ¸";
+			this->Ó·ÌÓ‚ËÚ¸ToolStripMenuItem->Click += gcnew System::EventHandler(this, &uo::Ó·ÌÓ‚ËÚ¸ToolStripMenuItem_Click);
 			// 
 			// uo
 			// 
@@ -463,16 +447,40 @@ private: System::Void ÔÂ˜‡Ú¸ToolStripMenuItem_Click(System::Object^ sender, Syst
 	bmp->Save("Z:\\zubr_db\\temp.bmp");
 
 }
-private: System::Void bmpToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void ˝ÍÒÔÓÚ¬‘‡ÈÎToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	saveFileDialog1->Filter = "ÃÓÌÓıÓÏÌ˚È ËÒÛÌÓÍ (*.bmp)|*.bmp|¬ÒÂ Ù‡ÈÎ˚ (*.*)|*.*";
 	saveFileDialog1->InitialDirectory = "Z:\\zubr_db\\export\\";
 	saveFileDialog1->RestoreDirectory = true;
 	saveFileDialog1->ShowDialog();
 	saveFileDialog1->AddExtension = ".bmp";
 	System::String^ path = saveFileDialog1->FileName;
-	Bitmap^ bmp = gcnew Bitmap(main_dg->Size.Width+10, main_dg->Size.Height+10);
+	Bitmap^ bmp = gcnew Bitmap(main_dg->Size.Width + 10, main_dg->Size.Height + 10);
 	main_dg->DrawToBitmap(bmp, main_dg->Bounds);
 	bmp->Save(path);
+}
+private: System::Void Ó·ÌÓ‚ËÚ¸ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	main_dg->Rows->Clear();
+	transf::setLastAddedSchoolNumber(0);
+	vector<vector<string>> data = mcsv::read_csv("Z:\\zubr_db\\schools.zb");
+	for (int i = 0; i < data.size(); i++)
+	{
+		main_dg->Rows->Add(transf::getLastAddedSchoolNumber() + 1,
+			msclr::interop::marshal_as<System::String^>(data[i][0]),
+			msclr::interop::marshal_as<System::String^>(data[i][1]),
+			msclr::interop::marshal_as<System::String^>(data[i][2]),
+			msclr::interop::marshal_as<System::String^>(data[i][3]),
+			msclr::interop::marshal_as<System::String^>(data[i][4]),
+			msclr::interop::marshal_as<System::String^>(data[i][5]),
+			msclr::interop::marshal_as<System::String^>(data[i][6]),
+			msclr::interop::marshal_as<System::String^>(data[i][7]),
+			msclr::interop::marshal_as<System::String^>(data[i][8]),
+			msclr::interop::marshal_as<System::String^>(data[i][9])
+		);
+		transf::setLastAddedSchoolNumber(transf::getLastAddedSchoolNumber() + 1);
+	}
+	int rows_num = this->main_dg->Rows->Count;
+	this->rows_num_tb->Text = rows_num.ToString();
 }
 };
 }
