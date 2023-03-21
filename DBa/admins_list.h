@@ -59,6 +59,8 @@ namespace DBa {
 
 
 
+
+
 	private:
 		/// <summary>
 		/// Îáÿçàòåëüíàÿ ïåðåìåííàÿ êîíñòðóêòîðà.
@@ -111,20 +113,20 @@ namespace DBa {
 			// äîáàâèòüToolStripMenuItem1
 			// 
 			this->äîáàâèòüToolStripMenuItem1->Name = L"äîáàâèòüToolStripMenuItem1";
-			this->äîáàâèòüToolStripMenuItem1->Size = System::Drawing::Size(180, 22);
+			this->äîáàâèòüToolStripMenuItem1->Size = System::Drawing::Size(126, 22);
 			this->äîáàâèòüToolStripMenuItem1->Text = L"Äîáàâèòü";
 			this->äîáàâèòüToolStripMenuItem1->Click += gcnew System::EventHandler(this, &admins_list::äîáàâèòüToolStripMenuItem1_Click);
 			// 
 			// íàéòèToolStripMenuItem
 			// 
 			this->íàéòèToolStripMenuItem->Name = L"íàéòèToolStripMenuItem";
-			this->íàéòèToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->íàéòèToolStripMenuItem->Size = System::Drawing::Size(126, 22);
 			this->íàéòèToolStripMenuItem->Text = L"Íàéòè";
 			// 
 			// óäàëèòüToolStripMenuItem
 			// 
 			this->óäàëèòüToolStripMenuItem->Name = L"óäàëèòüToolStripMenuItem";
-			this->óäàëèòüToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->óäàëèòüToolStripMenuItem->Size = System::Drawing::Size(126, 22);
 			this->óäàëèòüToolStripMenuItem->Text = L"Óäàëèòü";
 			this->óäàëèòüToolStripMenuItem->Click += gcnew System::EventHandler(this, &admins_list::óäàëèòüToolStripMenuItem_Click);
 			// 
@@ -161,7 +163,7 @@ namespace DBa {
 			this->name->HeaderText = L"Èìÿ ";
 			this->name->Name = L"name";
 			this->name->ReadOnly = true;
-			this->name->Width = 120;
+			this->name->Width = 125;
 			// 
 			// admins_list
 			// 

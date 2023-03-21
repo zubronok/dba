@@ -7,6 +7,8 @@
 #include "mcsv.h"
 #include "trans.h"
 
+
+
 namespace DBa {
 
 	using namespace System;
@@ -79,6 +81,11 @@ namespace DBa {
 	private: System::Windows::Forms::ToolStripMenuItem^ ýêñïîðòÂÔàéëToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ excelToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ wordToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ bmpToolStripMenuItem;
+	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+
+
+
 
 
 
@@ -150,6 +157,8 @@ namespace DBa {
 			this->ýêñïîðòÂÔàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->excelToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->wordToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->bmpToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->main_dg))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -335,31 +344,38 @@ namespace DBa {
 			// ïå÷àòüToolStripMenuItem
 			// 
 			this->ïå÷àòüToolStripMenuItem->Name = L"ïå÷àòüToolStripMenuItem";
-			this->ïå÷àòüToolStripMenuItem->Size = System::Drawing::Size(160, 22);
+			this->ïå÷àòüToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->ïå÷àòüToolStripMenuItem->Text = L"Ïå÷àòü";
 			this->ïå÷àòüToolStripMenuItem->Click += gcnew System::EventHandler(this, &uo::ïå÷àòüToolStripMenuItem_Click);
 			// 
 			// ýêñïîðòÂÔàéëToolStripMenuItem
 			// 
-			this->ýêñïîðòÂÔàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->ýêñïîðòÂÔàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->excelToolStripMenuItem,
-					this->wordToolStripMenuItem
+					this->wordToolStripMenuItem, this->bmpToolStripMenuItem
 			});
 			this->ýêñïîðòÂÔàéëToolStripMenuItem->Name = L"ýêñïîðòÂÔàéëToolStripMenuItem";
-			this->ýêñïîðòÂÔàéëToolStripMenuItem->Size = System::Drawing::Size(160, 22);
+			this->ýêñïîðòÂÔàéëToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->ýêñïîðòÂÔàéëToolStripMenuItem->Text = L"Ýêñïîðò â ôàéë";
 			// 
 			// excelToolStripMenuItem
 			// 
 			this->excelToolStripMenuItem->Name = L"excelToolStripMenuItem";
-			this->excelToolStripMenuItem->Size = System::Drawing::Size(123, 22);
+			this->excelToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->excelToolStripMenuItem->Text = L"MS Excel";
 			// 
 			// wordToolStripMenuItem
 			// 
 			this->wordToolStripMenuItem->Name = L"wordToolStripMenuItem";
-			this->wordToolStripMenuItem->Size = System::Drawing::Size(123, 22);
+			this->wordToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->wordToolStripMenuItem->Text = L"MS Word";
+			// 
+			// bmpToolStripMenuItem
+			// 
+			this->bmpToolStripMenuItem->Name = L"bmpToolStripMenuItem";
+			this->bmpToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->bmpToolStripMenuItem->Text = L".bmp";
+			this->bmpToolStripMenuItem->Click += gcnew System::EventHandler(this, &uo::bmpToolStripMenuItem_Click);
 			// 
 			// uo
 			// 
@@ -385,6 +401,7 @@ namespace DBa {
 		}
 #pragma endregion
 	private: System::Void uo_Load(System::Object^ sender, System::EventArgs^ e) {
+		transf::setLastAddedSchoolNumber(0);
 		vector<vector<string>> data = mcsv::read_csv("Z:\\zubr_db\\schools.zb");
 		for (int i = 0; i < data.size(); i++)
 		{
@@ -398,8 +415,7 @@ namespace DBa {
 				msclr::interop::marshal_as<System::String^>(data[i][6]),
 				msclr::interop::marshal_as<System::String^>(data[i][7]),
 				msclr::interop::marshal_as<System::String^>(data[i][8]),
-				msclr::interop::marshal_as<System::String^>(data[i][9]),
-				msclr::interop::marshal_as<System::String^>(data[i][10])
+				msclr::interop::marshal_as<System::String^>(data[i][9])
 				);
 			transf::setLastAddedSchoolNumber(transf::getLastAddedSchoolNumber() + 1);
 		}
@@ -416,32 +432,47 @@ private: System::Void rows_num_tb_TextChanged(System::Object^ sender, System::Ev
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void äîáàâèòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	add_uo^ form = gcnew add_uo;
-	form->ShowDialog();
-	vector<vector<string>> data = mcsv::read_csv("Z:\\zubr_db\\schools.zb");
-	main_dg->Rows->Add(transf::getLastAddedSchoolNumber() + 1,
-		msclr::interop::marshal_as<System::String^>(data[data.size()-1][0]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][1]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][2]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][3]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][4]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][5]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][6]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][7]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][8]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][9]),
-		msclr::interop::marshal_as<System::String^>(data[data.size() - 1][10])
-	);
-	transf::setLastAddedSchoolNumber(transf::getLastAddedSchoolNumber()+1);
-	rows_num_tb->Text = (Int32::Parse(rows_num_tb->Text)+1).ToString();
+	private: System::Void äîáàâèòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		add_uo^ form = gcnew add_uo;
+		form->ShowDialog();
+		if (transf::isAddedSchool()) {
+			vector<vector<string>> data = mcsv::read_csv("Z:\\zubr_db\\schools.zb");
+			main_dg->Rows->Add(transf::getLastAddedSchoolNumber() + 1,
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][0]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][1]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][2]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][3]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][4]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][5]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][6]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][7]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][8]),
+			msclr::interop::marshal_as<System::String^>(data[data.size() - 1][9])
+			);
+			transf::setLastAddedSchoolNumber(transf::getLastAddedSchoolNumber() + 1);
+			rows_num_tb->Text = (Int32::Parse(rows_num_tb->Text) + 1).ToString();
+			transf::setAddedSchool(false);
+		}
+
 }
 private: System::Void printDocument1_PrintPage(System::Object^ sender, System::Drawing::Printing::PrintPageEventArgs^ e) {
 }
 private: System::Void ïå÷àòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	Bitmap^ bmp = gcnew Bitmap(main_dg->Size.Width + 10, main_dg->Size.Height + 10);
 	main_dg->DrawToBitmap(bmp, main_dg->Bounds);
-	bmp->Save("Z:\\zubr_db\\test.bmp");
+	bmp->Save("Z:\\zubr_db\\temp.bmp");
+
+}
+private: System::Void bmpToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	saveFileDialog1->Filter = "Ìîíîõðîìíûé ðèñóíîê (*.bmp)|*.bmp|Âñå ôàéëû (*.*)|*.*";
+	saveFileDialog1->InitialDirectory = "Z:\\zubr_db\\export\\";
+	saveFileDialog1->RestoreDirectory = true;
+	saveFileDialog1->ShowDialog();
+	saveFileDialog1->AddExtension = ".bmp";
+	System::String^ path = saveFileDialog1->FileName;
+	Bitmap^ bmp = gcnew Bitmap(main_dg->Size.Width+10, main_dg->Size.Height+10);
+	main_dg->DrawToBitmap(bmp, main_dg->Bounds);
+	bmp->Save(path);
 }
 };
 }
@@ -449,3 +480,4 @@ private: System::Void ïå÷àòüToolStripMenuItem_Click(System::Object^ sender, Syst
 ref class uo
 {
 };
+

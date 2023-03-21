@@ -1,6 +1,7 @@
 #pragma once
 #include <msclr\marshal_cppstd.h>
 #include "mcsv.h"
+#include "trans.h"
 #include "uo_class.h"
 #include "Login_err.h"
 
@@ -38,8 +39,8 @@ namespace DBa {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ name_tb;
+
+
 	protected:
 
 	private: System::Windows::Forms::Label^ label2;
@@ -114,8 +115,6 @@ namespace DBa {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(add_uo::typeid));
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->name_tb = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->shortname_tb = (gcnew System::Windows::Forms::TextBox());
 			this->x_tb = (gcnew System::Windows::Forms::TextBox());
@@ -141,41 +140,25 @@ namespace DBa {
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(13, 13);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(105, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Наименование УО:";
-			// 
-			// name_tb
-			// 
-			this->name_tb->Location = System::Drawing::Point(124, 10);
-			this->name_tb->Name = L"name_tb";
-			this->name_tb->Size = System::Drawing::Size(509, 20);
-			this->name_tb->TabIndex = 1;
-			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 59);
+			this->label2->Location = System::Drawing::Point(11, 31);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(106, 13);
+			this->label2->Size = System::Drawing::Size(108, 13);
 			this->label2->TabIndex = 2;
-			this->label2->Text = L"Краткое название: ";
+			this->label2->Text = L"Наименование УО: ";
 			// 
 			// shortname_tb
 			// 
-			this->shortname_tb->Location = System::Drawing::Point(124, 56);
+			this->shortname_tb->Location = System::Drawing::Point(123, 28);
 			this->shortname_tb->Name = L"shortname_tb";
 			this->shortname_tb->Size = System::Drawing::Size(509, 20);
 			this->shortname_tb->TabIndex = 3;
 			// 
 			// x_tb
 			// 
-			this->x_tb->Location = System::Drawing::Point(92, 82);
+			this->x_tb->Location = System::Drawing::Point(91, 54);
 			this->x_tb->Name = L"x_tb";
 			this->x_tb->Size = System::Drawing::Size(541, 20);
 			this->x_tb->TabIndex = 5;
@@ -183,7 +166,7 @@ namespace DBa {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(12, 85);
+			this->label3->Location = System::Drawing::Point(11, 57);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(74, 13);
 			this->label3->TabIndex = 4;
@@ -192,7 +175,7 @@ namespace DBa {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(12, 111);
+			this->label4->Location = System::Drawing::Point(11, 83);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(186, 13);
 			this->label4->TabIndex = 6;
@@ -204,14 +187,14 @@ namespace DBa {
 			this->form_selector->FormattingEnabled = true;
 			this->form_selector->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->form_selector->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Государственная", L"Частная" });
-			this->form_selector->Location = System::Drawing::Point(198, 108);
+			this->form_selector->Location = System::Drawing::Point(197, 80);
 			this->form_selector->Name = L"form_selector";
 			this->form_selector->Size = System::Drawing::Size(435, 21);
 			this->form_selector->TabIndex = 7;
 			// 
 			// org_tb
 			// 
-			this->org_tb->Location = System::Drawing::Point(136, 135);
+			this->org_tb->Location = System::Drawing::Point(135, 107);
 			this->org_tb->Name = L"org_tb";
 			this->org_tb->Size = System::Drawing::Size(497, 20);
 			this->org_tb->TabIndex = 9;
@@ -219,7 +202,7 @@ namespace DBa {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(12, 138);
+			this->label5->Location = System::Drawing::Point(11, 110);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(118, 13);
 			this->label5->TabIndex = 8;
@@ -227,7 +210,7 @@ namespace DBa {
 			// 
 			// leader_tb
 			// 
-			this->leader_tb->Location = System::Drawing::Point(99, 161);
+			this->leader_tb->Location = System::Drawing::Point(98, 133);
 			this->leader_tb->Name = L"leader_tb";
 			this->leader_tb->Size = System::Drawing::Size(534, 20);
 			this->leader_tb->TabIndex = 11;
@@ -235,7 +218,7 @@ namespace DBa {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(12, 164);
+			this->label6->Location = System::Drawing::Point(11, 136);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(81, 13);
 			this->label6->TabIndex = 10;
@@ -246,7 +229,7 @@ namespace DBa {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label7->Location = System::Drawing::Point(13, 37);
+			this->label7->Location = System::Drawing::Point(12, 9);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(83, 13);
 			this->label7->TabIndex = 12;
@@ -257,7 +240,7 @@ namespace DBa {
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label8->Location = System::Drawing::Point(13, 189);
+			this->label8->Location = System::Drawing::Point(12, 161);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(64, 13);
 			this->label8->TabIndex = 13;
@@ -265,7 +248,7 @@ namespace DBa {
 			// 
 			// email_tb
 			// 
-			this->email_tb->Location = System::Drawing::Point(124, 204);
+			this->email_tb->Location = System::Drawing::Point(123, 176);
 			this->email_tb->Name = L"email_tb";
 			this->email_tb->Size = System::Drawing::Size(509, 20);
 			this->email_tb->TabIndex = 15;
@@ -273,7 +256,7 @@ namespace DBa {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(13, 207);
+			this->label9->Location = System::Drawing::Point(12, 179);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(107, 13);
 			this->label9->TabIndex = 14;
@@ -281,7 +264,7 @@ namespace DBa {
 			// 
 			// site_tb
 			// 
-			this->site_tb->Location = System::Drawing::Point(53, 230);
+			this->site_tb->Location = System::Drawing::Point(52, 202);
 			this->site_tb->Name = L"site_tb";
 			this->site_tb->Size = System::Drawing::Size(580, 20);
 			this->site_tb->TabIndex = 17;
@@ -289,7 +272,7 @@ namespace DBa {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(13, 233);
+			this->label10->Location = System::Drawing::Point(12, 205);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(34, 13);
 			this->label10->TabIndex = 16;
@@ -297,7 +280,7 @@ namespace DBa {
 			// 
 			// adress_tb
 			// 
-			this->adress_tb->Location = System::Drawing::Point(60, 256);
+			this->adress_tb->Location = System::Drawing::Point(60, 280);
 			this->adress_tb->Name = L"adress_tb";
 			this->adress_tb->Size = System::Drawing::Size(573, 20);
 			this->adress_tb->TabIndex = 19;
@@ -305,7 +288,7 @@ namespace DBa {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(13, 259);
+			this->label11->Location = System::Drawing::Point(13, 283);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(41, 13);
 			this->label11->TabIndex = 18;
@@ -313,7 +296,7 @@ namespace DBa {
 			// 
 			// phone_tb
 			// 
-			this->phone_tb->Location = System::Drawing::Point(74, 282);
+			this->phone_tb->Location = System::Drawing::Point(74, 254);
 			this->phone_tb->Name = L"phone_tb";
 			this->phone_tb->Size = System::Drawing::Size(559, 20);
 			this->phone_tb->TabIndex = 21;
@@ -321,7 +304,7 @@ namespace DBa {
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(13, 285);
+			this->label12->Location = System::Drawing::Point(13, 257);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(55, 13);
 			this->label12->TabIndex = 20;
@@ -331,7 +314,7 @@ namespace DBa {
 			// save_button
 			// 
 			this->save_button->AutoSize = true;
-			this->save_button->Location = System::Drawing::Point(12, 334);
+			this->save_button->Location = System::Drawing::Point(11, 306);
 			this->save_button->Name = L"save_button";
 			this->save_button->Size = System::Drawing::Size(621, 23);
 			this->save_button->TabIndex = 22;
@@ -341,7 +324,7 @@ namespace DBa {
 			// 
 			// unp_tb
 			// 
-			this->unp_tb->Location = System::Drawing::Point(53, 308);
+			this->unp_tb->Location = System::Drawing::Point(52, 228);
 			this->unp_tb->Name = L"unp_tb";
 			this->unp_tb->Size = System::Drawing::Size(580, 20);
 			this->unp_tb->TabIndex = 24;
@@ -350,7 +333,7 @@ namespace DBa {
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(13, 311);
+			this->label13->Location = System::Drawing::Point(12, 231);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(34, 13);
 			this->label13->TabIndex = 23;
@@ -360,7 +343,7 @@ namespace DBa {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(645, 367);
+			this->ClientSize = System::Drawing::Size(645, 342);
 			this->Controls->Add(this->unp_tb);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->save_button);
@@ -384,8 +367,6 @@ namespace DBa {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->shortname_tb);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->name_tb);
-			this->Controls->Add(this->label1);
 			this->Cursor = System::Windows::Forms::Cursors::SizeAll;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -401,8 +382,7 @@ namespace DBa {
 
 	private: System::Void save_button_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		if (name_tb->Text != ""
-			&& shortname_tb->Text != ""
+		if (shortname_tb->Text != ""
 			&& x_tb->Text != ""
 			&& form_selector->Text != ""
 			&& org_tb->Text != ""
@@ -414,10 +394,9 @@ namespace DBa {
 			&& phone_tb->Text != "")
 		{
 
-			std::string name, shortname, x, form, org, leader, email, site, adress, unp, phone;
+			std::string name, x, form, org, leader, email, site, adress, unp, phone;
 
-			name = msclr::interop::marshal_as<std::string>(name_tb->Text);
-			shortname = msclr::interop::marshal_as<std::string>(shortname_tb->Text);
+			name = msclr::interop::marshal_as<std::string>(shortname_tb->Text);
 			x = msclr::interop::marshal_as<std::string>(x_tb->Text);
 			form = msclr::interop::marshal_as<std::string>(form_selector->Text);
 			org = msclr::interop::marshal_as<std::string>(org_tb->Text);
@@ -428,8 +407,20 @@ namespace DBa {
 			phone = msclr::interop::marshal_as<std::string>(phone_tb->Text);
 			unp = msclr::interop::marshal_as<std::string>(unp_tb->Text);
 
-			uo_class new_class(name, shortname, x, form, org, leader, email, site, adress, unp, phone);
-			mcsv::append_csv("Z:\\zubr_db\\schools.zb", new_class.get_vdata());
+			vector<std::string> data;
+			data.push_back(name);
+			data.push_back(x);
+			data.push_back(org);
+			data.push_back(form);
+			data.push_back(leader);
+			data.push_back(email);
+			data.push_back(site);
+			data.push_back(unp);
+			data.push_back(phone);
+			data.push_back(adress);
+
+			mcsv::append_csv("Z:\\zubr_db\\schools.zb", data);
+			transf::setAddedSchool(true);
 			this->Close();
 		}
 		else
@@ -438,6 +429,7 @@ namespace DBa {
 			form->ShowDialog();
 		}
 		
+
 	}
 private: System::Void label12_Click(System::Object^ sender, System::EventArgs^ e) {
 }

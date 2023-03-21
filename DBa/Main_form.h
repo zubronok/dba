@@ -298,7 +298,7 @@ private: System::Void ó÷ğåæäåíèåÎáğàçîâàíèÿToolStripMenuItem_Click(System::Objec
 	form->ShowDialog();
 }
 private: System::Void ñïğàâêàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	system("explorer https://support.microsoft.com/ru-ru/windows");
+	
 }
 private: System::Void äîáàâèòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	add_user^ form = gcnew add_user;

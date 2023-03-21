@@ -140,6 +140,7 @@
     <ClCompile Include="change_password.cpp" />
     <ClCompile Include="db_error.cpp" />
     <ClCompile Include="groups.cpp" />
+    <ClCompile Include="help.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="Login_err.cpp" />
     <ClCompile Include="Main_form.cpp" />
@@ -170,6 +171,9 @@
     <ClInclude Include="exts.cpp" />
     <ClInclude Include="exts.h" />
     <ClInclude Include="groups.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="help.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Login.h">

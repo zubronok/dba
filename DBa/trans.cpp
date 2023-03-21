@@ -4,6 +4,7 @@ namespace transf {
 	std::string __name;
 	int lastAddedUserNumber = 0;
 	int lastAddedSchoolNumber = 0;
+	bool isSchoolAdded;
 
 	std::string getName()
 	{
@@ -32,6 +33,16 @@ namespace transf {
 	void setLastAddedSchoolNumber(int addedSchool)
 	{
 		lastAddedSchoolNumber = addedSchool;
+	}
+
+	bool isAddedSchool()
+	{
+		return isSchoolAdded;
+	}
+
+	void setAddedSchool(bool x)
+	{
+		isSchoolAdded = x;
 	}
 
 }

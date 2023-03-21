@@ -11,4 +11,7 @@ namespace transf {
 
 	int getLastAddedSchoolNumber();
 	void setLastAddedSchoolNumber(int addedSchool);
+
+	bool isAddedSchool();
+	void setAddedSchool(bool x);
 }
