@@ -2,6 +2,7 @@
 #include <vector>
 #include <fstream>
 #include <msclr/marshal_cppstd.h>
+#include "paths.h"
 #include "trans.h"
 #include "Login_err.h"
 #include "split.h"
@@ -171,7 +172,7 @@ namespace DBa {
 		else {
 			delete pass2;
 			delete pass;
-			ifstream inp("Z:\\zubr_db\\usr.zb");
+			ifstream inp(paths::get_path() + "usr.zb");
 			vector<std::string> *__datas = new vector<std::string>;
 			std::string* temp = new std::string;
 			while (!inp.eof()) {
@@ -192,7 +193,7 @@ namespace DBa {
 				}
 			}
 			if (changed) {
-				ofstream out("Z:\\zubr_db\\usr.zb");
+				ofstream out(paths::get_path() + "usr.zb");
 				for (int i = 0; i < data.size()-1; i++) {
 					out << data[i][0] << '-' << data[i][1] << '\n';
 				}

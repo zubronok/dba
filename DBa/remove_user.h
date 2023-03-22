@@ -4,6 +4,8 @@
 #include <msclr/marshal_cppstd.h>
 #include <string>
 #include "split.h"
+#include "paths.h"
+
 using std::ifstream;
 using std::vector;
 using std::ofstream;
@@ -105,13 +107,14 @@ namespace DBa {
 			this->MinimizeBox = false;
 			this->Name = L"remove_user";
 			this->Text = L"Удаление";
+			this->Load += gcnew System::EventHandler(this, &remove_user::remove_user_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		ifstream inp("Z:\\zubr_db\\usr.zb");
+		ifstream inp(paths::get_path() + "usr.zb");
 		vector<std::string>* __datas = new vector<std::string>;
 		std::string* temp = new std::string;
 		while (!inp.eof()) {
@@ -131,12 +134,14 @@ namespace DBa {
 				break; break;
 			}
 		}
-		ofstream out("Z:\\zubr_db\\usr.zb");
+		ofstream out(paths::get_path() + "usr.zb");
 		for (int i = 0; i < data.size() - 1; i++) {
 			out << data[i][0] << '-' << data[i][1] << '\n';
 		}
 		out << data[data.size() - 1][0] << '-' << data[data.size() - 1][1];
 		this->Close();
 	}
-	};
+	private: System::Void remove_user_Load(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

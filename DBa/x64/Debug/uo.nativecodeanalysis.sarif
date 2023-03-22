@@ -1,0 +1,99 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/uo.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "87c148d8e6c266f4523973fe32abe309dd78bbdb9df7a6f8a0f27a0df08411b1"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/uo.h"
+          },
+          "hashes": {
+            "sha-256": "4bd9533bd5ab3f75460b24d3f0a1e2176f6ae0255a8ca7cbadc0488ef19d607f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/add_uo.h"
+          },
+          "hashes": {
+            "sha-256": "b64c2dd8fe270c1e87890de918fc9deec8a1d2177e185e6492da49ac05d0317f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/paths.h"
+          },
+          "hashes": {
+            "sha-256": "eb2a5e8f017914fe3faa000e50d617285b53f07041b38a55dddc5911f172d490"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/include/mcsv.h"
+          },
+          "hashes": {
+            "sha-256": "770b0ac1d4376ec36c2d3986c774ae56c3d437512f4a75c7d35e4e7ba7b34ebf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/trans.h"
+          },
+          "hashes": {
+            "sha-256": "2c67626d1be3a731bfde32f0fbd480bad0a96b4511e09913a012e9e6c9ceead8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/uo_class.h"
+          },
+          "hashes": {
+            "sha-256": "4b69a6a0422399ab18746c846967e1c119390edec3c6a9d3d78fdfea407072cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/db_error.h"
+          },
+          "hashes": {
+            "sha-256": "1f9327c895e3b09fd55bff75082e504f459588413520c2bf3469b97a101daad2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/login_err.h"
+          },
+          "hashes": {
+            "sha-256": "9a086c1ae0322c6e7a0cf487648e0cc49326baacca74bf549ac17404c720c6e9"
+          }
+        }
+      ]
+    }
+  ]
+}

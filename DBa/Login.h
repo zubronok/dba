@@ -10,6 +10,7 @@
 #include <string>
 #include "exts.h"
 #include "trans.h"
+#include "paths.h"
 #include "split.h"
 
 extern std::string username;
@@ -155,7 +156,7 @@ namespace DBa {
 			this->Hide();
 			is_skipping_auth = true;
 		}
-		ifstream db("Z:\\zubr_db\\usr.zb");
+		ifstream db(paths::get_path() + "usr.zb");
 		if (!db.is_open())
 		{
 			db_error^ dbe = gcnew db_error;
@@ -195,6 +196,7 @@ namespace DBa {
 	}
 
 private: System::Void Login_Load(System::Object^ sender, System::EventArgs^ e) {
+	paths::load_path();
 }
 };
 }

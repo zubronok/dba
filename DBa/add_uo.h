@@ -1,5 +1,6 @@
 #pragma once
 #include <msclr\marshal_cppstd.h>
+#include "paths.h"
 #include "mcsv.h"
 #include "trans.h"
 #include "uo_class.h"
@@ -419,7 +420,7 @@ namespace DBa {
 			data.push_back(phone);
 			data.push_back(adress);
 
-			mcsv::append_csv("Z:\\zubr_db\\schools.zb", data);
+			mcsv::append_csv(paths::get_path() + "schools.zb", data);
 			transf::setAddedSchool(true);
 			this->Close();
 		}

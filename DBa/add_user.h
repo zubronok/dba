@@ -1,6 +1,7 @@
 #pragma once
 #include <fstream>
 #include <msclr\marshal_cppstd.h>
+#include "paths.h"
 using std::ofstream;
 
 namespace DBa {
@@ -125,6 +126,7 @@ namespace DBa {
 			this->Name = L"add_user";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Добавление пользователя";
+			this->Load += gcnew System::EventHandler(this, &add_user::add_user_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -137,11 +139,16 @@ namespace DBa {
 		System::String^ str = login + "-" + password;
 
 		std::fstream out;
-		out.open("Z:\\zubr_db\\usr.zb");
+
+		
+
+		out.open(paths::get_path() + "usr.zb");
 		out.seekg(0, std::ios_base::end);
 		out << '\n' << msclr::interop::marshal_as<std::string>(str);
 		this->Close();
 		
 	}
+private: System::Void add_user_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

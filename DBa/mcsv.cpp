@@ -66,18 +66,26 @@ namespace mcsv {
 		return data;
 	}
 
+
 	void write_csv(string path, vector<vector<std::string>> vect)
 	{
-		const size_t fsize = vect.size();
-		const size_t fcsize = vect[0].size();
+		if (vect.size() == 0)
+		{
+			std::ofstream ofs;
+			ofs.open(path, std::ofstream::out | std::ofstream::trunc);
+			ofs.close();
+			return;
+		}
+
+		int fsize = vect.size();
+		int fcsize = vect[0].size();
 
 		std::string _temp = "";
 		std::string temp = "";
 
-
 		for (int i = 0; i < fsize; i++) {
 			for (int j = 0; j < fcsize - 1; j++) {
-				_temp += vect[i][j] + ',';
+				_temp += vect[i][j];
 			}
 			_temp += vect[fsize - 1][fcsize - 1];
 			_temp += '\n';

@@ -1,6 +1,11 @@
 ﻿  Login.cpp
 C:\Users\8\source\repos\DBa\DBa\Login.cpp(9,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
   Main_form.cpp
+  add_uo.cpp
+  add_user.cpp
+  admins_list.cpp
+  change_password.cpp
+  remove_user.cpp
   uo.cpp
   Создание кода...
   add_uo.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка

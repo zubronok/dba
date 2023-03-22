@@ -1,0 +1,171 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.35.32215.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/main_form.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "e8e01daa7bb044f46feeea265ea1f4cf47795b7988aac12aa85a91ddda1b71c0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/main_form.h"
+          },
+          "hashes": {
+            "sha-256": "5618ced33bc38cc6c2220e158a42463cfb7ab02c854ce83981b1e4dbdf5bfc1a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/uo.h"
+          },
+          "hashes": {
+            "sha-256": "4bd9533bd5ab3f75460b24d3f0a1e2176f6ae0255a8ca7cbadc0488ef19d607f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/add_uo.h"
+          },
+          "hashes": {
+            "sha-256": "b64c2dd8fe270c1e87890de918fc9deec8a1d2177e185e6492da49ac05d0317f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/paths.h"
+          },
+          "hashes": {
+            "sha-256": "eb2a5e8f017914fe3faa000e50d617285b53f07041b38a55dddc5911f172d490"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/include/mcsv.h"
+          },
+          "hashes": {
+            "sha-256": "770b0ac1d4376ec36c2d3986c774ae56c3d437512f4a75c7d35e4e7ba7b34ebf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/trans.h"
+          },
+          "hashes": {
+            "sha-256": "2c67626d1be3a731bfde32f0fbd480bad0a96b4511e09913a012e9e6c9ceead8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/uo_class.h"
+          },
+          "hashes": {
+            "sha-256": "4b69a6a0422399ab18746c846967e1c119390edec3c6a9d3d78fdfea407072cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/db_error.h"
+          },
+          "hashes": {
+            "sha-256": "1f9327c895e3b09fd55bff75082e504f459588413520c2bf3469b97a101daad2"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/login_err.h"
+          },
+          "hashes": {
+            "sha-256": "9a086c1ae0322c6e7a0cf487648e0cc49326baacca74bf549ac17404c720c6e9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/groups.h"
+          },
+          "hashes": {
+            "sha-256": "ae25a17be26992eded899d6f6031431ac90cb823ca5827fa0d5705a4b5373799"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/add_user.h"
+          },
+          "hashes": {
+            "sha-256": "2ddc4ab30777067e387cb8a1543ca3bcc1ed18970bcc6bf3185ec7bec6955ed3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/admins_list.h"
+          },
+          "hashes": {
+            "sha-256": "a6ef78d111ecd025803bbe4edb0d271c064d40da695138d1b45f7fdc75166228"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/remove_user.h"
+          },
+          "hashes": {
+            "sha-256": "34cd03f1e97772c40efe3edcda0c68b4c5f7256cf1c4a262f0e55d4c9a44498a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/split.h"
+          },
+          "hashes": {
+            "sha-256": "057fbc5f09e2bace71bdac33fc12586068df7aed99b5a21c0ade201e9f7c3b90"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/change_password.h"
+          },
+          "hashes": {
+            "sha-256": "ac445ab827443523624cf934a657a94861f31b11ca8180c6dc6712a9e5e02a49"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/usr_not_found.h"
+          },
+          "hashes": {
+            "sha-256": "d298fa65e46651d4794bf4ef1aec2571e6646756b57b594b63fcfbfafeeff352"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/8/source/repos/dba/dba/help.h"
+          },
+          "hashes": {
+            "sha-256": "6a03bf7bb67d360567ec058a2c714a5737e9d959044c849ab0e471cf00a72743"
+          }
+        }
+      ]
+    }
+  ]
+}

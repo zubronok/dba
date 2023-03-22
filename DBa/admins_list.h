@@ -2,6 +2,7 @@
 #include "remove_user.h"
 #include "add_user.h"
 #include "change_password.h"
+#include "paths.h"
 #include "trans.h"
 #include "split.h"
 
@@ -194,7 +195,7 @@ namespace DBa {
 		f->ShowDialog();
 	}
 private: System::Void admins_list_Load(System::Object^ sender, System::EventArgs^ e) {
-	ifstream inp("Z:\\zubr_db\\usr.zb");
+	ifstream inp(paths::get_path() + "usr.zb");
 	vector<std::string>* __datas = new vector<std::string>;
 	std::string* temp = new std::string;
 	while (!inp.eof()) {
@@ -216,7 +217,7 @@ private: System::Void admins_list_Load(System::Object^ sender, System::EventArgs
 private: System::Void äîáàâèòüToolStripMenuItem1_Click(System::Object^ sender, System::EventArgs^ e) {
 	add_user^ f = gcnew add_user;
 	f->ShowDialog();
-	ifstream inp("Z:\\zubr_db\\usr.zb");
+	ifstream inp(paths::get_path() + "usr.zb");
 	vector<std::string> __datas;
 	std::string* temp = new std::string;
 	while (!inp.eof()) {
@@ -234,7 +235,7 @@ private: System::Void óäàëèòüToolStripMenuItem_Click(System::Object^ sender, Sys
 	remove_user^ form = gcnew remove_user;
 	form->ShowDialog();
 	users_dg->Rows->Clear();
-	ifstream inp("Z:\\zubr_db\\usr.zb");
+	ifstream inp(paths::get_path() + "usr.zb");
 	vector<std::string>* __datas = new vector<std::string>;
 	std::string* temp = new std::string;
 	while (!inp.eof()) {

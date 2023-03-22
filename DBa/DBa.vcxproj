@@ -111,6 +111,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,6 +146,7 @@
     <ClCompile Include="Login_err.cpp" />
     <ClCompile Include="Main_form.cpp" />
     <ClCompile Include="mcsv.cpp" />
+    <ClCompile Include="paths.cpp" />
     <ClCompile Include="remove_user.cpp" />
     <ClCompile Include="split.cpp" />
     <ClCompile Include="trans.cpp" />
@@ -185,6 +187,7 @@
     <ClInclude Include="Main_form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="paths.h" />
     <ClInclude Include="remove_user.h">
       <FileType>CppForm</FileType>
     </ClInclude>
