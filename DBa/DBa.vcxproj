@@ -148,6 +148,7 @@
     <ClCompile Include="mcsv.cpp" />
     <ClCompile Include="paths.cpp" />
     <ClCompile Include="remove_user.cpp" />
+    <ClCompile Include="send_email.cpp" />
     <ClCompile Include="split.cpp" />
     <ClCompile Include="trans.cpp" />
     <ClCompile Include="uo.cpp" />
@@ -192,6 +193,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="send_email.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="split.h" />
     <ClInclude Include="trans.h" />
     <ClInclude Include="uo.h">
@@ -235,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="remove_user.resx">
       <DependentUpon>remove_user.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="send_email.resx">
+      <DependentUpon>send_email.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uo.resx">
       <DependentUpon>uo.h</DependentUpon>

@@ -3,6 +3,10 @@
 namespace DBa {
 
 	using namespace System;
+	using namespace System::Net;
+	using namespace System::Net::Mail;
+	using namespace System::Net::Mime;
+	using namespace System::Threading;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
@@ -41,6 +45,7 @@ namespace DBa {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::LinkLabel^ linkLabel2;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ report_button;
 
 	private:
 		/// <summary>
@@ -62,6 +67,7 @@ namespace DBa {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->linkLabel2 = (gcnew System::Windows::Forms::LinkLabel());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->report_button = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -116,18 +122,29 @@ namespace DBa {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(102, 138);
+			this->label3->Location = System::Drawing::Point(102, 133);
 			this->label3->Name = L"label3";
 			this->label3->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->label3->Size = System::Drawing::Size(124, 13);
 			this->label3->TabIndex = 5;
 			this->label3->Text = L"maksimkh34@duck.com";
 			// 
+			// report_button
+			// 
+			this->report_button->Location = System::Drawing::Point(12, 151);
+			this->report_button->Name = L"report_button";
+			this->report_button->Size = System::Drawing::Size(307, 23);
+			this->report_button->TabIndex = 6;
+			this->report_button->Text = L"Сообщить об ошибке";
+			this->report_button->UseVisualStyleBackColor = true;
+			this->report_button->Click += gcnew System::EventHandler(this, &help::report_button_Click);
+			// 
 			// help
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(331, 167);
+			this->ClientSize = System::Drawing::Size(331, 186);
+			this->Controls->Add(this->report_button);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->linkLabel2);
 			this->Controls->Add(this->label2);
@@ -147,5 +164,18 @@ namespace DBa {
 
 		}
 #pragma endregion
-	};
+	private: System::Void report_button_Click(System::Object^ sender, System::EventArgs^ e) {
+		SmtpClient^ Smtp = gcnew SmtpClient("smtp.mail.ru", 25);
+		Smtp->Credentials = gcnew NetworkCredential("zudbalogs@bk.ru", "u4E92XUjjemyKu8cvWdq");
+		Smtp ->EnableSsl = true;
+		MailMessage^ Message = gcnew MailMessage();
+		Message->From = gcnew MailAddress("zudbalogs@bk.ru");
+		Message->To->Add(gcnew MailAddress("34_logs@list.ru"));
+		Message->Subject = "Subject";
+		Message->Body = "SKGNBPWOUHGOIW";
+
+		Smtp->Send(Message);
+		
+	}
+};
 }

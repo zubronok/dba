@@ -1,7 +1,7 @@
 ﻿  Login.cpp
 C:\Users\8\source\repos\DBa\DBa\Login.cpp(9,32): warning C4829: Возможно, неправильные параметры функции main. Рекомендуемый вариант - "int main(Platform::Array<Platform::String^>^ argv)"
   Main_form.cpp
-  uo.cpp
+  help.cpp
   Создание кода...
   add_uo.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   DBa.vcxproj -> C:\Users\8\source\repos\DBa\x64\Release\DBa.exe
